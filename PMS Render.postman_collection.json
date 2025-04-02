@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "5757b9fc-9cf8-476d-945b-268612fcd584",
+		"name": "PMS Render",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9874462"
+	},
+	"item": [
+		{
+			"name": "create_fav_pet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2IyMjc4NGNmMWUyYzAyYWUyYjAxZTkiLCJyb2xlIjoidXNlciIsImlhdCI6MTczOTcyODc3MiwiZXhwIjoxNzM5NzMwNTcyfQ.9woghf9MrWMEVzY0hwLaexkzbQlv1Pls58X-PiLN7fM\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2JlODg1MGEwOTU0ZTZjYjA3YjA2NWQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDA2Mzc3NDUsImV4cCI6MTc0MDYzODM0NX0.RtgE1eVdHALUsrzcjOWyE7taE-Td7_14nXz3OaN4QOk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nickname",
+							"value": "bird",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "female",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "white",
+							"type": "text"
+						},
+						{
+							"key": "breed",
+							"value": "cacausian",
+							"type": "text"
+						},
+						{
+							"key": "isForSale",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": "/C:/Users/hp/Downloads/bird.jpg"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pet-management-system-5yf9.onrender.com/api/pets/",
+					"protocol": "https",
+					"host": [
+						"pet-management-system-5yf9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"pets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register as user 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "steph",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "user",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pet-management-system-5yf9.onrender.com/api/auth/register",
+					"protocol": "https",
+					"host": [
+						"pet-management-system-5yf9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login as user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "sureway",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pet-management-system-5yf9.onrender.com/api/auth/login?username=steph&password=123456789",
+					"protocol": "https",
+					"host": [
+						"pet-management-system-5yf9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "steph"
+						},
+						{
+							"key": "password",
+							"value": "123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Not Register Limited List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pet-management-system-5yf9.onrender.com/api/pets/",
+					"protocol": "https",
+					"host": [
+						"pet-management-system-5yf9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"pets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Registered No Limit",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2JlODg1MGEwOTU0ZTZjYjA3YjA2NWQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDA2MzU3NzUsImV4cCI6MTc0MDYzNjM3NX0.mtOlxuPWtHDzTynMkexaOlYMzMoGyitU1I0s12U_uDY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://pet-management-system-5yf9.onrender.com/api/pets/images",
+					"protocol": "https",
+					"host": [
+						"pet-management-system-5yf9",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"pets",
+						"images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pet",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2JlODYzNzg2OWYyOWQ4NmY5YmQxZDciLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MDUzOTQ0NywiZXhwIjoxNzQwNTQxMjQ3fQ.Q4YGT_lZ8Simq_-XxLqfwPxy9VLikS4sWpNNfnijWYI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4203/api/pets/67be7b7fcafd0b1b1df298c8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4203",
+					"path": [
+						"api",
+						"pets",
+						"67be7b7fcafd0b1b1df298c8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register As Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "steph",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "user",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4203/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4203",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
